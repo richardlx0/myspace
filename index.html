@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>加国初雪早临 - 诗意枫情</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
+            --primary: #8B0000; /* 枫叶红 */
+            --secondary: #2E5D42; /* 松绿 */
+            --accent: #D4A76A; /* 秋黄 */
+            --light: #F5F1E6; /* 羊皮纸色 */
+            --dark: #1A1F2C; /* 深蓝灰 */
             --text: #333333;
-            --white: #ffffff;
+            --snow: #F8F9FA;
         }
 
         body {
             background-color: var(--light);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 400;
+        }
+
+        .chinese-font {
+            font-family: 'Ma Shan Zheng', cursive, 'Noto Serif SC', serif;
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
+            background: linear-gradient(to bottom, rgba(26, 31, 44, 0.9), rgba(43, 59, 85, 0.8)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .container {
@@ -54,13 +65,15 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1.8rem;
             font-weight: 700;
+            font-family: 'Ma Shan Zheng', cursive;
         }
 
         .logo i {
             font-size: 2rem;
+            color: var(--accent);
         }
 
         nav ul {
@@ -73,12 +86,13 @@
         }
 
         nav ul li a {
-            color: var(--white);
+            color: var(--light);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             padding: 0.5rem 0;
             position: relative;
+            font-size: 1.1rem;
         }
 
         nav ul li a:hover {
@@ -101,36 +115,57 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
-            background-position: center;
+            background-position: center 70%;
             height: 80vh;
             display: flex;
             align-items: center;
             text-align: center;
-            color: var(--white);
+            color: var(--light);
+            position: relative;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(26, 31, 44, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--accent);
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .poem-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .poem-content {
+            font-size: 1.8rem;
+            line-height: 2.2;
             margin-bottom: 2rem;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        .poem-line {
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
+            background-color: var(--primary);
+            color: var(--light);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
@@ -138,13 +173,15 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
         }
 
         .btn:hover {
-            background-color: var(--primary);
+            background-color: var(--accent);
+            color: var(--dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
 
         section {
@@ -162,6 +199,7 @@
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
+            font-family: 'Ma Shan Zheng', cursive;
         }
 
         .section-title h2::after {
@@ -170,7 +208,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 4px;
             background-color: var(--accent);
             border-radius: 2px;
@@ -180,133 +218,190 @@
             color: var(--text);
             max-width: 700px;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
 
-        .about-content {
+        .poem-analysis {
+            background-color: var(--snow);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .analysis-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .about-img {
+        .analysis-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .about-img img {
+        .analysis-img img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s ease;
         }
 
-        .about-img:hover img {
+        .analysis-img:hover img {
             transform: scale(1.05);
         }
 
-        .about-text h3 {
+        .analysis-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--dark);
         }
 
-        .about-text p {
+        .analysis-text p {
             margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
         }
 
-        .stats {
+        .interpretation {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
+        .interpretation-item {
+            background-color: var(--light);
             border-radius: 10px;
+            padding: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
         }
 
-        .stat-item:hover {
+        .interpretation-item:hover {
             transform: translateY(-10px);
         }
 
-        .stat-item i {
-            font-size: 2.5rem;
+        .interpretation-item i {
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
 
-        .stat-item h3 {
-            font-size: 2.5rem;
+        .interpretation-item h3 {
+            font-size: 1.5rem;
             color: var(--dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .stat-item p {
+        .interpretation-item p {
             color: var(--text);
         }
 
-        .initiatives {
-            background-color: var(--white);
+        .poem-structure {
+            background-color: var(--light);
+            padding: 4rem 0;
         }
 
-        .initiatives-grid {
+        .structure-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
-        .initiative-card {
-            background-color: var(--light);
+        .structure-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background-color: var(--snow);
             border-radius: 10px;
-            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
         }
 
-        .initiative-card:hover {
+        .structure-item:hover {
             transform: translateY(-10px);
+            border-top-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .initiative-img {
-            height: 200px;
+        .structure-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .structure-item h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        .structure-item p {
+            color: var(--text);
+        }
+
+        .author-section {
+            background: linear-gradient(to right, rgba(139, 0, 0, 0.1), rgba(46, 93, 66, 0.1));
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .author-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .author-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             overflow: hidden;
+            margin: 0 auto 2rem;
+            border: 5px solid var(--accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .initiative-img img {
+        .author-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
+        .author-quote {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+            position: relative;
         }
 
-        .initiative-content p {
-            margin-bottom: 1.5rem;
+        .author-quote::before, .author-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .author-quote::before {
+            top: -20px;
+            left: 0;
+        }
+
+        .author-quote::after {
+            bottom: -40px;
+            right: 0;
         }
 
         .cta {
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
+            color: var(--light);
             text-align: center;
             padding: 5rem 0;
         }
@@ -314,6 +409,7 @@
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            font-family: 'Ma Shan Zheng', cursive;
         }
 
         .cta p {
@@ -325,24 +421,24 @@
         }
 
         .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
+            background-color: var(--accent);
+            color: var(--dark);
         }
 
         .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
+            background-color: var(--light);
+            color: var(--primary);
         }
 
         footer {
             background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
+            color: var(--light);
+            padding: 3rem 0 1.5rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -352,6 +448,8 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 10px;
+            color: var(--accent);
+            font-family: 'Ma Shan Zheng', cursive;
         }
 
         .footer-column h3::after {
@@ -390,6 +488,7 @@
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
@@ -400,13 +499,14 @@
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--white);
+            color: var(--light);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             background-color: var(--accent);
+            color: var(--dark);
             transform: translateY(-5px);
         }
 
@@ -414,28 +514,31 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--light);
         }
 
         @media (max-width: 992px) {
-            .about-content {
+            .analysis-content {
                 grid-template-columns: 1fr;
             }
             
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .interpretation {
+                grid-template-columns: 1fr;
             }
             
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .stats {
+            .structure-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -445,8 +548,12 @@
                 font-size: 2.5rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .hero .poem-title {
+                font-size: 2.2rem;
+            }
+            
+            .poem-content {
+                font-size: 1.5rem;
             }
             
             nav ul {
@@ -455,7 +562,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
+                background-color: var(--dark);
                 flex-direction: column;
                 padding: 1rem 0;
                 text-align: center;
@@ -475,7 +582,7 @@
                 display: block;
             }
             
-            .initiatives-grid {
+            .structure-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -483,221 +590,192 @@
                 grid-template-columns: 1fr;
             }
             
-            .stats {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
 
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        .poem-line-highlight {
+            color: var(--primary);
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- 头部导航 -->
     <header>
         <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+            <div class="logo chinese-font">
+                <i class="fas fa-mountain"></i>
+                <span>枫雪诗韵</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#poem">诗作欣赏</a></li>
+                    <li><a href="#analysis">诗歌赏析</a></li>
+                    <li><a href="#structure">诗艺解析</a></li>
+                    <li><a href="#author">关于作者</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 诗作展示区 -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1 class="chinese-font">加国初雪早临</h1>
+            <div class="poem-content chinese-font">
+                <span class="poem-line">枫艳秋深妆尚浓，</span>
+                <span class="poem-line">寒酥一夜满檐蓬。</span>
+                <span class="poem-line">红叶未央霜先落，</span>
+                <span class="poem-line">紫燕南迁春再逢。</span>
+            </div>
+            <p>一首描绘加拿大深秋初雪美景的七言绝句</p>
+            <a href="#analysis" class="btn">赏析诗韵</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- 诗歌分析 -->
+    <section id="analysis">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2 class="chinese-font">诗歌赏析</h2>
+                <p>深度解读《加国初雪早临》中的意象与情感</p>
             </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+            <div class="poem-analysis">
+                <div class="analysis-content">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="枫叶与雪景">
+                    </div>
+                    <div class="analysis-text">
+                        <h3 class="chinese-font">意境解析</h3>
+                        <p>《加国初雪早临》以简洁四句勾勒出加拿大深秋初雪的独特景致。首句"枫艳秋深妆尚浓"描绘了枫叶在深秋时节依然绚烂的景象，用"妆尚浓"三字拟人化地表现了秋意未尽、色彩犹存的生动画面。</p>
+                        <p>次句"寒酥一夜满檐蓬"中，"寒酥"是雪的古雅别称，既点明了初雪的降临，又赋予雪以酥脆轻盈的质感。"一夜满檐蓬"则写出了雪势之急、覆盖之广，营造出时空转换的戏剧性效果。</p>
+                        <p>后两句通过"红叶未央霜先落"与"紫燕南迁春再逢"的对比，表达了季节更迭中生命循环的永恒主题，既有对当下美景的赞叹，又暗含对来年春天的期盼。</p>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                <div class="interpretation">
+                    <div class="interpretation-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3 class="chinese-font">枫叶意象</h3>
+                        <p>枫叶作为加拿大的国家象征，在本诗中不仅是季节的标志，更承载着对故土深情的寄托。"枫艳秋深"四字将视觉的绚烂与季节的深沉巧妙结合。</p>
+                    </div>
+                    <div class="interpretation-item">
+                        <i class="fas fa-snowflake"></i>
+                        <h3 class="chinese-font">初雪意境</h3>
+                        <p>"寒酥"这一古典词汇的运用，既体现了诗人深厚的文化底蕴，又以新颖的意象赋予传统题材现代感。初雪的突然降临象征自然之力的不可预测与壮美。</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
+    <!-- 诗艺解析 -->
+    <section class="poem-structure" id="structure">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2 class="chinese-font">诗艺解析</h2>
+                <p>探究《加国初雪早临》的诗歌艺术与技巧</p>
             </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+            <div class="structure-grid">
+                <div class="structure-item">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3 class="chinese-font">对仗工整</h3>
+                    <p>诗中"枫艳"对"寒酥"，"秋深"对"一夜"，"红叶"对"紫燕"，体现了古典诗歌的对仗之美，音韵和谐，节奏明快。</p>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+                <div class="structure-item">
+                    <i class="fas fa-palette"></i>
+                    <h3 class="chinese-font">色彩运用</h3>
+                    <p>"枫艳"之红、"寒酥"之白、"紫燕"之紫，诗人巧妙运用色彩词汇，构建出层次丰富的视觉画面，增强了诗歌的绘画感。</p>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+                <div class="structure-item">
+                    <i class="fas fa-clock"></i>
+                    <h3 class="chinese-font">时空转换</h3>
+                    <p>从秋深到初雪，从红叶到霜落，从紫燕南迁到春再相逢，诗歌在有限的篇幅中完成了季节的循环与时间的跨越。</p>
+                </div>
+                <div class="structure-item">
+                    <i class="fas fa-heart"></i>
+                    <h3 class="chinese-font">情感寄托</h3>
+                    <p>表面写景，实则抒情。通过对自然景物的细腻描绘，寄托了诗人对异国土地的复杂情感，既有欣赏，又有乡愁。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
+    <!-- 作者介绍 -->
+    <section class="author-section" id="author">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <div class="author-content">
+                <div class="author-img">
+                    <img src="https://images.unsplash.com/photo-1544717305-99670f9c28f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="诗人形象">
+                </div>
+                <h2 class="chinese-font">关于诗人</h2>
+                <div class="author-quote chinese-font">
+                    "诗者，天地之心，四时之眼。"
+                </div>
+                <p>本诗作者是一位旅居加拿大的华人诗人，擅长以古典诗的形式描绘现代生活和异国风情。其作品融合东西方文化视角，既有传统诗词的韵律美，又富有现代生活的气息。《加国初雪早临》是其在加拿大生活期间的代表作之一，曾发表于多个海外华文文学刊物。</p>
+                <a href="#home" class="btn" style="margin-top: 2rem;">返回诗作</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
+    <!-- 行动呼吁 -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="chinese-font">发现更多诗韵之美</h2>
+            <p>古典诗词是中华文化的瑰宝，在当代社会依然闪耀着智慧与美感。加入我们，一同探索诗词的无穷魅力，传承千年文脉。</p>
+            <a href="#" class="btn">探索更多诗词</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3 class="chinese-font">枫雪诗韵</h3>
+                    <p>致力于古典诗词的当代解读与传播，让千年诗韵在现代生活中焕发新生。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 class="chinese-font">快速导航</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">诗作首页</a></li>
+                        <li><a href="#poem">诗作原文</a></li>
+                        <li><a href="#analysis">诗歌赏析</a></li>
+                        <li><a href="#structure">诗艺解析</a></li>
+                        <li><a href="#author">关于作者</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3 class="chinese-font">联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 枫叶大道 123号，多伦多，加拿大</p>
+                    <p><i class="fas fa-envelope"></i> poetry@mapleverse.com</p>
+                    <p><i class="fas fa-globe"></i> www.maplepoetry.ca</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2023 枫雪诗韵 · 加国初雪早临 · 古典诗词赏析网站 · 保留所有权利</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // 移动菜单切换
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
-        // Smooth scrolling for navigation links
+        // 平滑滚动导航链接
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -716,7 +794,34 @@
                 }
             });
         });
+
+        // 诗句高亮效果
+        document.querySelectorAll('.poem-line').forEach((line, index) => {
+            line.addEventListener('mouseenter', function() {
+                this.classList.add('poem-line-highlight');
+            });
+            
+            line.addEventListener('mouseleave', function() {
+                this.classList.remove('poem-line-highlight');
+            });
+            
+            // 添加点击朗诵效果
+            line.addEventListener('click', function() {
+                const text = this.textContent;
+                // 在实际应用中，这里可以添加文字转语音功能
+                alert(`朗诵诗句：${text}`);
+            });
+        });
+
+        // 滚动时头部透明度变化
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(to bottom, rgba(26, 31, 44, 0.95), rgba(43, 59, 85, 0.9))';
+            } else {
+                header.style.background = 'linear-gradient(to bottom, rgba(26, 31, 44, 0.9), rgba(43, 59, 85, 0.8))';
+            }
+        });
     </script>
 </body>
-
 </html>
